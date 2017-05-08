@@ -1,0 +1,23 @@
+{% extends 'web_final/base.html' %}
+{% block cabecera %}
+    <li class="nav-item"> <a class="nav-link" href="#">Categorias</a> </li>
+    <li class="nav-item"> <a class="nav-link" href="#">Acerca de<br></a> </li>
+    {% if user.is_authenticated %}
+    <li class="nav-item"> <a class="nav-link" href="/web_final/logout/">Logout</a> </li>
+    <li class="nav-item"> <a class="nav-link" href="/web_final/registrop/">Registrar producto</a> </li>
+    {% else %}
+    <li class="nav-item"> <a class="nav-link" href="/web_final/login/">Login</a> </li>
+    <li class="nav-item"> <a class="nav-link" href="/web_final/register/">Registrate aquí</a> </li>
+    {% endif %}
+{% endblock %}
+{% block banner %}
+    <p class="lead text-white">Gracias a nuestra página puedes encontrar todo lo que desees con cada una de sus características.</p>
+    {% if user.is_authenticated %}
+    <h1 class="text-white">Enjoy it {{ user.username }}!</h1>
+    {% else %}
+    <h1 class="text-white">Enjoy it!</h1>
+    {% endif %}
+{% endblock %}
+{% block body_block %}
+
+{% endblock %}

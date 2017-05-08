@@ -1,0 +1,15 @@
+{% extends 'web_final/base.html' %}
+{% block cabecera %}
+    <li class="nav-item active text-warning"> <a class="nav-link" href="/web_final/">Inicio<br></a> </li>
+{% endblock %}
+{% block banner %}
+<p class="lead text-white">Gracias a nuestra página puedes encontrar todo lo que desees con cada una de sus características.</p>
+{% endblock %}
+{% block body_block %}
+    <h1>Registra tu producto</h1>
+    <form  role="form"  enctype="multipart/form-data" action="" method="POST" id="upload-image-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" name="submit" value="Register" />
+    </form>
+{% endblock %}

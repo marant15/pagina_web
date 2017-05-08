@@ -1,0 +1,19 @@
+{% extends 'web_final/base.html' %}
+{% block cabecera %}
+    <li class="nav-item active text-warning"> <a class="nav-link" href="/web_final/">Inicio<br></a> </li>
+{% endblock %}
+{% block banner %}
+<p class="lead text-white">Gracias a nuestra página puedes encontrar todo lo que desees con cada una de sus características.</p>
+{% endblock %}
+{% block body_block %}
+    <h1>Iniciar sesión</h1>
+        <form id="login_form" method="post" action="/web_final/login/">
+            {% csrf_token %}
+            Username: <input type="text" name="username" value="" size="50" />
+            <br />
+            Password: <input type="password" name="password" value="" size="50" />
+            <br />
+
+            <input type="submit" value="submit" />
+        </form>
+{% endblock %}
